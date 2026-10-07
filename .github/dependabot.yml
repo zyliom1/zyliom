@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     groups:
       security:
         applies-to: "security-updates"
@@ -51,7 +51,7 @@ updates:
       - dependency-name: "simple-zstd"
     directory: "/superset-frontend/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - npm
       - dependabot
@@ -95,7 +95,7 @@ updates:
       fontsource:
         patterns:
           - "@fontsource/*"
-    open-pull-requests-limit: 30
+    open-pull-requests-limit: 5
     versioning-strategy: increase
     cooldown:
       default-days: 7
@@ -103,10 +103,6 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     open-pull-requests-limit: 10
-    # Bump the lower bound to the new version, not just widen the upper
-    # bound. Without this, a `sqlglot>=28.10.0, <29` constraint upgraded
-    # to `<30` would keep the stale lower bound forever, dragging
-    # transitively-resolved versions with it. See #40186 (review thread).
     versioning-strategy: increase
     schedule:
       interval: "weekly"
@@ -123,12 +119,12 @@ updates:
   - package-ecosystem: "npm"
     directory: ".github/actions"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     groups:
       security:
         applies-to: "security-updates"
         patterns: ["*"]
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
     versioning-strategy: increase
     cooldown:
       default-days: 7
@@ -136,7 +132,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/docs/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     groups:
       security:
         applies-to: "security-updates"
@@ -156,7 +152,7 @@ updates:
         patterns:
           - "@typescript-eslint/*"
           - "typescript-eslint"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
     versioning-strategy: increase
     cooldown:
       default-days: 7
@@ -164,7 +160,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/superset-websocket/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - npm
       - dependabot
@@ -179,7 +175,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/superset-websocket/utils/client-ws-app/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - npm
       - dependabot
@@ -187,7 +183,7 @@ updates:
       security:
         applies-to: "security-updates"
         patterns: ["*"]
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
     versioning-strategy: increase
     cooldown:
       default-days: 7
@@ -195,7 +191,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/superset-embedded-sdk/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - npm
       - dependabot
